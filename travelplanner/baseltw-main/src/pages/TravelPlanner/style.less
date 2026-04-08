@@ -1,0 +1,228 @@
+// Travel Planner - Global styles
+// Luxury Travel aesthetic: warm golds, deep navy, elegant typography
+
+@tp-gold: #C9A84C;
+@tp-gold-light: #E8C97A;
+@tp-gold-dark: #A07830;
+@tp-navy: #0F1B2D;
+@tp-navy-mid: #1A2E45;
+@tp-cream: #FAF7F0;
+@tp-warm-gray: #8B7355;
+@tp-coral: #E8654A;
+@tp-success: #4CAF7D;
+@tp-warning: #F0A500;
+
+// Card hover effect
+.tp-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+// Section title
+.tp-section-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: @tp-navy;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+  
+  span {
+    color: @tp-gold;
+  }
+}
+
+.tp-section-subtitle {
+  color: @tp-warm-gray;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+// Gold badge
+.tp-badge-gold {
+  background: linear-gradient(135deg, @tp-gold, @tp-gold-light);
+  color: white;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+// Destination card
+.tp-dest-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+  .tp-card-hover();
+  
+  .ant-card-cover {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  .ant-card-body {
+    padding: 16px;
+  }
+}
+
+// Hero banner
+.tp-hero {
+  background: linear-gradient(135deg, @tp-navy 0%, @tp-navy-mid 50%, #1a3a5c 100%);
+  padding: 40px 32px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 32px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201, 168, 76, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: 5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+}
+
+// Stat card
+.tp-stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border-left: 4px solid @tp-gold;
+  
+  .stat-value {
+    font-family: 'Georgia', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: @tp-navy;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  
+  .stat-label {
+    color: @tp-warm-gray;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  
+  .stat-icon {
+    font-size: 28px;
+    opacity: 0.15;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+// Filter bar
+.tp-filter-bar {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// Budget alert
+.tp-budget-over {
+  background: linear-gradient(135deg, #fff5f3, #ffecea);
+  border: 1px solid #ffccc7;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+// Itinerary day
+.tp-day-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  margin-bottom: 16px;
+  
+  .day-header {
+    background: linear-gradient(135deg, @tp-navy, @tp-navy-mid);
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .day-title {
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .day-date {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+  }
+  
+  .day-body {
+    padding: 16px;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .tp-section-title {
+    font-size: 22px;
+  }
+  
+  .tp-hero {
+    padding: 24px 20px;
+  }
+  
+  .tp-filter-bar {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tp-dest-card .ant-card-cover {
+    height: 160px;
+  }
+  
+  .tp-section-title {
+    font-size: 20px;
+  }
+}
